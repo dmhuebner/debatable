@@ -1,0 +1,21 @@
+.objections-container {
+  padding: 1rem;
+
+  .objections-header {
+    color: #c90000;
+    font-weight: bold;
+  }
+
+  .objection-container {
+    .sustained-badge {
+      color: #c90000;
+      font-weight: bold;
+    }
+
+    .objection-content {
+      overflow: scroll;
+      padding: 1rem;
+      box-shadow: inset 0 2px 4px 2px #ededed;
+    }
+  }
+}

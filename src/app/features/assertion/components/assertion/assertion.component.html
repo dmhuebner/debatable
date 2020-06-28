@@ -1,0 +1,8 @@
+<section class="assertion-container" *ngIf="assertion">
+  <h1>Assertion: {{assertion.text}}</h1>
+  <h3 class="evidence-header">Supporting Evidence:</h3>
+  <app-evidence-list
+    [evidenceList]="assertion.evidenceSet">
+  </app-evidence-list>
+<!--  <pre>{{assertion | json}}</pre>-->
+</section>

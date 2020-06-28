@@ -1,0 +1,24 @@
+<section class="objections-container" *ngIf="true || objections">
+  <h3 class="objections-header">OBJECTIONS</h3>
+  <div class="objection-container" *ngFor="let objection of objections; let index = index">
+    <h4>
+      Objection {{index + 1}}
+      <span class="sustained-badge" *ngIf="objection.sustained"> - SUSTAINED</span>
+    </h4>
+    <div class="objection-content">
+      <p><b>Reason</b></p>
+      <p>{{objection.reason}}</p>
+      <div class="objection-evidence-list" *ngIf="objection.evidenceSet">
+        <app-evidence-list
+          [evidenceList]="objection.evidenceSet">
+        </app-evidence-list>
+      </div>
+    </div>
+<!--    <pre>{{objection.evidenceSet | json}}</pre>-->
+  </div>
+</section>
+
+
+<!--sustained: boolean;-->
+<!--reason: string;-->
+<!--evidenceSet: Evidence[];-->

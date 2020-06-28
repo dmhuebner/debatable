@@ -1,0 +1,33 @@
+<div class="source-list-container" *ngIf="sourceList">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let source of sourceList; let index = index">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Source {{index + 1}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{source.title}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p><b>Link</b></p>
+      <a href="{{source.link}}" target="_blank"></a>
+      <p><b>Author</b></p>
+      <p>{{source.author}}</p>
+      <p><b>Published Date</b></p>
+      <p>{{source.publishedDate}}</p>
+      <p><b>Media Type</b></p>
+      <p>{{source.mediaType}}</p>
+      <p><b>Citations</b></p>
+      <p>{{source.citations.join(', ')}}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+
+<!--title: string;-->
+<!--mediaType: string;-->
+<!--citations: string[];-->
+<!--publishedDate: string;-->
+<!--author?: string;-->
+<!--link?: string;-->
+<!--objections?: Objection[];-->
