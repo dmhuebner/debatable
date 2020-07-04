@@ -1,11 +1,16 @@
 .evidence-list-container   {
   min-width: 40rem;
+  margin: 1rem;
 
   .evidence-container {
     margin-left: 2rem;
 
+    .evidence-list-panel {
+      background-color: #F1F8FF;
+    }
+
     .objections-container {
-      margin: 2rem;
+      margin: 2rem 0;
     }
   }
 

@@ -1,7 +1,9 @@
 <div class="evidence-list-container">
   <mat-accordion multi *ngIf="evidenceList">
     <div class="evidence-container">
-      <mat-expansion-panel *ngFor="let evidence of evidenceList; let index = index">
+      <mat-expansion-panel
+        *ngFor="let evidence of evidenceList; let index = index"
+        class="evidence-list-panel">
         <mat-expansion-panel-header>
           <mat-panel-title>
             Evidence {{index + 1}}
