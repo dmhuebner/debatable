@@ -1,6 +1,11 @@
 <section class="assertion-container" *ngIf="assertion">
   <h1>Assertion: {{assertion.text}}</h1>
   <h3 class="evidence-header">Supporting Evidence:</h3>
+  <button mat-fab
+          color="primary"
+          (click)="addEvidence()">
+    <mat-icon>add</mat-icon>
+  </button>
   <app-evidence-list
     [evidenceList]="assertion.evidenceSet">
   </app-evidence-list>

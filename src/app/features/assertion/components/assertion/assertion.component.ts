@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Assertion } from '../../interfaces/assertion.interface';
 
 @Component({
@@ -10,9 +10,15 @@ export class AssertionComponent implements OnInit {
 
   @Input() assertion: Assertion;
 
+  @Output() addEvidenceClicked = new EventEmitter<true>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addEvidence() {
+    this.addEvidenceClicked.emit(true);
   }
 
 }

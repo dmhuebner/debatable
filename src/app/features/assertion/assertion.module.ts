@@ -6,6 +6,9 @@ import { EvidenceListComponent } from './components/evidence-list/evidence-list.
 import { SourceListComponent } from './components/source-list/source-list.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ObjectionListComponent } from './components/objection/objection-list.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -19,7 +22,10 @@ import { ObjectionListComponent } from './components/objection/objection-list.co
   ],
   imports: [
     CommonModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDialogModule
   ]
 })
 export class AssertionModule { }

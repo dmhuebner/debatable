@@ -1,0 +1,8 @@
+<section class="new-evidence-container">
+  <h2>Add Evidence</h2>
+  <h4>For the assertion: "{{assertionText}}"</h4>
+  <app-evidence-form
+    (cancelled)="cancel()"
+    (evidenceAdded)="addEvidence($event)">
+  </app-evidence-form>
+</section>
