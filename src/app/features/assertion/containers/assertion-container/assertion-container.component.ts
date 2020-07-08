@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Assertion } from '../../interfaces/assertion.interface';
 import { Source } from '../../interfaces/source.interface';
-import { Objection } from '../../interfaces/objection.interface';
-import { Evidence } from '../../interfaces/evidence.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { NewEvidenceContainerComponent } from '../new-evidence-container/new-evidence-container.component';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { NewEvidenceSourceContainerComponent } from '../new-evidence-source-container/new-evidence-source-container.component';
+import { EvidenceReference } from '../../interfaces/evidence-reference.interface';
 
 const mockAssertion: Assertion = {
   text: 'The Earth is not a globe',
@@ -153,7 +153,28 @@ export class AssertionContainerComponent implements OnInit {
     dialogRef.afterClosed().pipe(
       takeUntil(this.unsubscribe$)
     ).subscribe(newEvidence => {
-      this.mockAssertion.evidenceSet.push(newEvidence);
+      if (newEvidence) {
+        this.mockAssertion.evidenceSet.push(newEvidence);
+      }
+    });
+  }
+
+  openAddSourceDialog(evidenceRef: EvidenceReference): void {
+    const dialogRef = this.dialog.open(NewEvidenceSourceContainerComponent, {
+      minWidth: '400px',
+      data: {
+        assertionText: evidenceRef.evidenceText
+      }
+    });
+
+    dialogRef.afterClosed().pipe(
+      takeUntil(this.unsubscribe$)
+    ).subscribe((newSource: Source) => {
+      if (newSource) {
+        this.mockAssertion.evidenceSet.find((evidence, index) => {
+          return index === evidenceRef.evidenceIndex;
+        }).sources.push(newSource);
+      }
     });
   }
 

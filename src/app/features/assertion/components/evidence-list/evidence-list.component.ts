@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Evidence } from '../../interfaces/evidence.interface';
+import { EvidenceReference } from '../../interfaces/evidence-reference.interface';
 
 @Component({
   selector: 'app-evidence-list',
@@ -10,9 +11,15 @@ export class EvidenceListComponent implements OnInit {
 
   @Input() evidenceList: Evidence[];
 
+  @Output() addSourceClicked = new EventEmitter<EvidenceReference>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addSource(evidenceReference: EvidenceReference) {
+    this.addSourceClicked.emit(evidenceReference);
   }
 
 }

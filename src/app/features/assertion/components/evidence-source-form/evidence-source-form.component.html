@@ -1,0 +1,77 @@
+<div class="source-form-container">
+  <form [formGroup]="sourceForm" (ngSubmit)="onSourceAdded()">
+    <mat-form-field appearance="outline" class="full-width-field">
+      <mat-label>Title</mat-label>
+      <input matInput
+             required
+             formControlName="title"/>
+    </mat-form-field>
+    <div class="short-width-row">
+      <mat-form-field appearance="outline" class="short-width-field">
+        <mat-label>Media Type</mat-label>
+        <input matInput
+               required
+               formControlName="mediaType"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="short-width-field">
+        <mat-label>Published Date</mat-label>
+        <input matInput
+               required
+               [matDatepicker]="publishedDatePicker"
+                formControlName="publishedDate" />
+        <mat-datepicker-toggle matSuffix [for]="publishedDatePicker">
+        </mat-datepicker-toggle>
+        <mat-datepicker #publishedDatePicker>
+        </mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width-field">
+      <mat-label>Author</mat-label>
+      <input matInput
+             formControlName="author"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width-field">
+      <mat-label>Link</mat-label>
+      <input matInput
+             required
+             formControlName="link"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width-field">
+      <mat-label>Citations</mat-label>
+      <mat-chip-list #chipList aria-label="Citations" required>
+        <mat-chip *ngFor="let citation of sourceForm.get('citations').value"
+                  [selectable]="true"
+                  [removable]="true" (removed)="removeCitation(citation)">
+          {{citation}}
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="Add citations..."
+               required
+               formControlName="citations"
+               [matChipInputFor]="chipList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="true"
+               (matChipInputTokenEnd)="addCitation($event)">
+      </mat-chip-list>
+    </mat-form-field>
+
+    <div class="btn-group">
+      <button mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="sourceForm.invalid">
+        Add Source
+      </button>
+      <button mat-raised-button
+              color="secondary"
+              (click)="onCancel()">
+        Cancel
+      </button>
+    </div>
+  </form>
+  <pre>{{sourceForm.value | json}}</pre>
+</div>
+

@@ -1,22 +1,25 @@
 <div class="evidence-form-container">
-  <form [formGroup]="evidenceForm">
+  <form [formGroup]="evidenceForm" (ngSubmit)="onEvidenceAdded()">
     <mat-form-field appearance="outline" class="full-width-field">
       <mat-label>Evidence</mat-label>
       <textarea matInput
+                required
                 formControlName="text">
       </textarea>
     </mat-form-field>
     <mat-form-field appearance="outline" class="full-width-field">
       <mat-label>Conclusion</mat-label>
       <textarea matInput
+                required
                 formControlName="conclusion">
       </textarea>
     </mat-form-field>
+
     <div class="btn-group">
       <button mat-raised-button
               color="primary"
-              [disabled]="evidenceForm.invalid"
-              (click)="onEvidenceAdded()">
+              type="submit"
+              [disabled]="evidenceForm.invalid">
         Add
       </button>
       <button mat-raised-button

@@ -16,7 +16,14 @@
         <p>{{evidence.text}}</p>
         <p><b>Conclusion</b> - How does this evidence support the claim?</p>
         <p>{{evidence.conclusion}}</p>
-        <p><b>Sources</b></p>
+        <p>
+          <b>Sources</b>
+          <button mat-mini-fab
+                  color="primary"
+                  (click)="addSource({evidenceText: evidence.text, evidenceIndex: index})">
+            <mat-icon>add</mat-icon>
+          </button>
+        </p>
         <app-source-list
           [sourceList]="evidence.sources">
         </app-source-list>

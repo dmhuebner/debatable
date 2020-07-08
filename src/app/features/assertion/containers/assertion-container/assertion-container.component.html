@@ -1,6 +1,7 @@
 <section class="assertion-container">
   <app-assertion
     [assertion]="mockAssertion"
-    (addEvidenceClicked)="openAddEvidenceDialog()">
+    (addEvidenceClicked)="openAddEvidenceDialog()"
+    (addSourceClicked)="openAddSourceDialog($event)">
   </app-assertion>
 </section>

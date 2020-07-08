@@ -9,6 +9,14 @@ import { ObjectionListComponent } from './components/objection/objection-list.co
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { EvidenceSourceFormComponent } from './components/evidence-source-form/evidence-source-form.component';
+import { NewEvidenceSourceContainerComponent } from './containers/new-evidence-source-container/new-evidence-source-container.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 
@@ -18,14 +26,22 @@ import { MatDialogModule } from '@angular/material/dialog';
     AssertionComponent,
     EvidenceListComponent,
     SourceListComponent,
-    ObjectionListComponent
+    ObjectionListComponent,
+    EvidenceSourceFormComponent,
+    NewEvidenceSourceContainerComponent
   ],
   imports: [
     CommonModule,
     MatExpansionModule,
     MatButtonModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatChipsModule
   ]
 })
 export class AssertionModule { }

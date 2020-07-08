@@ -1,0 +1,8 @@
+<section class="new-evidence-source-section">
+  <h2>Add New Evidence Source</h2>
+  <h5>{{evidenceText}}</h5>
+  <app-evidence-source-form
+    (newSourceAdded)="addSource($event)"
+    (cancelled)="cancel()">
+  </app-evidence-source-form>
+</section>

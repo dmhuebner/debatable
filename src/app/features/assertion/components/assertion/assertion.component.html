@@ -7,7 +7,8 @@
     <mat-icon>add</mat-icon>
   </button>
   <app-evidence-list
-    [evidenceList]="assertion.evidenceSet">
+    [evidenceList]="assertion.evidenceSet"
+    (addSourceClicked)="addSource($event)">
   </app-evidence-list>
 <!--  <pre>{{assertion | json}}</pre>-->
 </section>

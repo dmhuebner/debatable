@@ -1,0 +1,26 @@
+.source-form-container {
+  .full-width-field {
+    width: 100%;
+  }
+
+  .short-width-row {
+    display: flex;
+    justify-content: space-between;
+
+    .short-width-field {
+      width: 47%;
+
+      &:nth-child(2) {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .btn-group {
+    padding: 1rem;
+
+    button {
+      margin-right: 2rem;
+    }
+  }
+}
