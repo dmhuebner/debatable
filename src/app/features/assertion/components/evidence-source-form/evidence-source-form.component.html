@@ -4,6 +4,7 @@
       <mat-label>Title</mat-label>
       <input matInput
              required
+             autocomplete="off"
              formControlName="title"/>
     </mat-form-field>
     <div class="short-width-row">
@@ -11,12 +12,14 @@
         <mat-label>Media Type</mat-label>
         <input matInput
                required
+               autocomplete="off"
                formControlName="mediaType"/>
       </mat-form-field>
       <mat-form-field appearance="outline" class="short-width-field">
         <mat-label>Published Date</mat-label>
         <input matInput
                required
+               autocomplete="off"
                [matDatepicker]="publishedDatePicker"
                 formControlName="publishedDate" />
         <mat-datepicker-toggle matSuffix [for]="publishedDatePicker">
@@ -29,6 +32,7 @@
     <mat-form-field appearance="outline" class="full-width-field">
       <mat-label>Author</mat-label>
       <input matInput
+             autocomplete="off"
              formControlName="author"/>
     </mat-form-field>
 
@@ -36,6 +40,7 @@
       <mat-label>Link</mat-label>
       <input matInput
              required
+             autocomplete="off"
              formControlName="link"/>
     </mat-form-field>
 
@@ -50,6 +55,7 @@
         </mat-chip>
         <input placeholder="Add citations..."
                required
+               autocomplete="off"
                formControlName="citations"
                [matChipInputFor]="chipList"
                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
@@ -72,6 +78,5 @@
       </button>
     </div>
   </form>
-  <pre>{{sourceForm.value | json}}</pre>
 </div>
 

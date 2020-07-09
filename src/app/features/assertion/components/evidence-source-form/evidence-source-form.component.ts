@@ -67,7 +67,7 @@ export class EvidenceSourceFormComponent implements OnInit {
       title: [source ? source.title : '', [Validators.required]],
       mediaType: [source ? source.mediaType : '', [Validators.required]],
       publishedDate: [source ? source.publishedDate : '', [Validators.required]],
-      citations: [source ? source.citations : null, [Validators.required]],
+      citations: [source ? source.citations : [], [Validators.required]],
       author: [source ? source.author : '', []],
       link: [source ? source.link : '', [Validators.required]],
     });

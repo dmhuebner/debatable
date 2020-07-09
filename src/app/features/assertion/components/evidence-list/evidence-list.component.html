@@ -27,6 +27,13 @@
         <app-source-list
           [sourceList]="evidence.sources">
         </app-source-list>
+        <div class="objection-btn-container">
+          <button mat-raised-button
+                  color="warn"
+                  (click)="addObjection({evidenceText: evidence.text, evidenceIndex: index})">
+            Object to Evidence
+          </button>
+        </div>
         <div class="objections-container"
              *ngIf="evidence.objections">
           <app-objection-list
@@ -38,8 +45,3 @@
   </mat-accordion>
 </div>
 
-
-<!--<div class="evidence-container" *ngFor="let evidence of evidenceList">-->
-<!--  <h5>{{evidence.text}}</h5>-->
-<!--  <p>{{evidence.conclusion}}</p>-->
-<!--</div>-->

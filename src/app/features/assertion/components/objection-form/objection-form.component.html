@@ -1,0 +1,25 @@
+<div class="objection-form-container">
+  <form [formGroup]="objectionForm" (ngSubmit)="onObjectionAdded()">
+    <mat-form-field appearance="outline" class="full-width-field">
+      <mat-label>Reason</mat-label>
+      <textarea matInput
+                required
+                formControlName="reason">
+      </textarea>
+    </mat-form-field>
+
+    <div class="btn-group">
+      <button mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="objectionForm.invalid">
+        Add
+      </button>
+      <button mat-raised-button
+              color="secondary"
+              (click)="onCancel()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

@@ -13,6 +13,7 @@ export class AssertionComponent implements OnInit {
 
   @Output() addEvidenceClicked = new EventEmitter<true>();
   @Output() addSourceClicked = new EventEmitter<EvidenceReference>();
+  @Output() addObjectionToEvidenceClicked = new EventEmitter<EvidenceReference>();
 
   constructor() { }
 
@@ -25,6 +26,10 @@ export class AssertionComponent implements OnInit {
 
   addSource(evidenceReference: EvidenceReference) {
     this.addSourceClicked.emit(evidenceReference);
+  }
+
+  addObjection(evidenceReference: EvidenceReference) {
+    this.addObjectionToEvidenceClicked.emit(evidenceReference);
   }
 
 }

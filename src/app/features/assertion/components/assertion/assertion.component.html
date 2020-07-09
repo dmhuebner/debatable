@@ -8,7 +8,8 @@
   </button>
   <app-evidence-list
     [evidenceList]="assertion.evidenceSet"
-    (addSourceClicked)="addSource($event)">
+    (addSourceClicked)="addSource($event)"
+    (addObjectionClicked)="addObjection($event)">
   </app-evidence-list>
 <!--  <pre>{{assertion | json}}</pre>-->
 </section>

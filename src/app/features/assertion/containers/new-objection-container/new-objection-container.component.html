@@ -1,0 +1,8 @@
+<section class="new-objection-section">
+  <h2>Add Objection to Evidence</h2>
+  <h5>{{evidenceText}}</h5>
+  <app-objection-form
+    (newObjectionAdded)="addObjectionToEvidence($event)"
+    (cancelled)="cancel()">
+  </app-objection-form>
+</section>

@@ -17,6 +17,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatChipsModule } from '@angular/material/chips';
+import { NewObjectionContainerComponent } from './containers/new-objection-container/new-objection-container.component';
+import { ObjectionFormComponent } from './components/objection-form/objection-form.component';
 
 
 
@@ -28,7 +30,9 @@ import { MatChipsModule } from '@angular/material/chips';
     SourceListComponent,
     ObjectionListComponent,
     EvidenceSourceFormComponent,
-    NewEvidenceSourceContainerComponent
+    NewEvidenceSourceContainerComponent,
+    NewObjectionContainerComponent,
+    ObjectionFormComponent
   ],
   imports: [
     CommonModule,

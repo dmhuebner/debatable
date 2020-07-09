@@ -12,6 +12,7 @@ export class EvidenceListComponent implements OnInit {
   @Input() evidenceList: Evidence[];
 
   @Output() addSourceClicked = new EventEmitter<EvidenceReference>();
+  @Output() addObjectionClicked = new EventEmitter<EvidenceReference>();
 
   constructor() { }
 
@@ -20,6 +21,10 @@ export class EvidenceListComponent implements OnInit {
 
   addSource(evidenceReference: EvidenceReference) {
     this.addSourceClicked.emit(evidenceReference);
+  }
+
+  addObjection(evidenceReference: EvidenceReference) {
+    this.addObjectionClicked.emit(evidenceReference);
   }
 
 }
